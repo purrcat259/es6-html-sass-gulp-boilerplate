@@ -7,10 +7,6 @@ import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 
-let stripDirectory = (path) => {
-    path.dirname = '';
-}
-
 let indexFile = './src/js/index.js';
 
 gulp.task('build_dist', ['build_js_dist']);
@@ -23,7 +19,6 @@ gulp.task('build_js_dist', () => {
         .bundle()
         .pipe(source(indexFile))
         .pipe(buffer())
-        .pipe(rename(stripDirectory))
         .pipe(gulp.dest('./dist'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
