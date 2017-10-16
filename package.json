@@ -1,0 +1,28 @@
+{
+  "name": "es6-html-sass-gulp-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate project to use ES6 JS, HTML and SASS using gulp for tasks",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purrcat259/es6-html-sass-gulp-boilerplate.git"
+  },
+  "keywords": [
+    "es6",
+    "js",
+    "javascript",
+    "html",
+    "sass",
+    "gulp",
+    "boilerplate"
+  ],
+  "author": "purrcat259",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/purrcat259/es6-html-sass-gulp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/purrcat259/es6-html-sass-gulp-boilerplate#readme"
+}
