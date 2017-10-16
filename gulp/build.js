@@ -9,6 +9,10 @@ import sourcemaps from 'gulp-sourcemaps';
 
 let indexFile = './src/js/index.js';
 
+let stripDirectory = (path) => {
+    path.dirname = '';
+};
+
 gulp.task('build_dist', ['build_js_dist']);
 
 gulp.task('build_js_dist', () => {
@@ -19,6 +23,7 @@ gulp.task('build_js_dist', () => {
         .bundle()
         .pipe(source(indexFile))
         .pipe(buffer())
+        .pipe(rename(stripDirectory))
         .pipe(gulp.dest('./dist'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
@@ -33,6 +38,7 @@ gulp.task('build_js', () => {
         .bundle()
         .pipe(source(indexFile))
         .pipe(buffer())
+        .pipe(rename(stripDirectory))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/'));
