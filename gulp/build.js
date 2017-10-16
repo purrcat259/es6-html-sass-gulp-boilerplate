@@ -10,13 +10,15 @@ let stripDirectory = (path) => {
     path.dirname = '';
 }
 
+let indexFile = './src/js/index.js'l
+
 gulp.task('build_dist', ['build_js_dist']);
 
 gulp.task('build_js_dist', () => {
-    return browserify('./src/js/index.js')
+    return browserify(indexFile)
         .transform(babelify)
         .bundle()
-        .pipe(source('./src/js/index.js'))
+        .pipe(source(indexFile))
         .pipe(buffer())
         .pipe(rename(stripDirectory))
         .pipe(gulp.dest('./dist'))
